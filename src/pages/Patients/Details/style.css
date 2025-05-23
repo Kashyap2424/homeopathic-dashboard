@@ -1,0 +1,25 @@
+@keyframes switch-on {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes switch-off {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-switch-on {
+  animation: switch-on 0.3s forwards;
+}
+
+.animate-switch-off {
+  animation: switch-off 0.3s forwards;
+}
