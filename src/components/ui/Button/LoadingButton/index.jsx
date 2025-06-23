@@ -10,7 +10,7 @@ const LoadingButton = (props) => {
   switch (theme) {
     case "primary":
       themeClass =
-        "w-full inline-flex items-center justify-center-safe px-4 py-2 text-sm font-medium text-white bg-violet-500 border border-transparent rounded-md shadow-sm hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-500 cursor-pointer";
+        "w-full inline-flex items-center justify-center-safe px-4 py-2 text-sm font-medium text-white bg-cyan-500 border border-transparent rounded-md shadow-sm hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-500 cursor-pointer";
       break;
     case "secondary":
       themeClass =
@@ -30,7 +30,7 @@ const LoadingButton = (props) => {
       break;
     default:
       themeClass =
-        "w-full inline-flex items-center justify-center-safe px-4 py-2 text-sm font-medium text-white bg-violet-500 border border-transparent rounded-md shadow-sm hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-500 cursor-pointer";
+        "w-full inline-flex items-center justify-center-safe px-4 py-2 text-sm font-medium text-white bg-cyan-500 border border-transparent rounded-md shadow-sm hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-500 cursor-pointer";
       break;
   }
 

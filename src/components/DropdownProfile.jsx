@@ -80,9 +80,9 @@ function DropdownProfile({ align }) {
         />
         <div className="flex items-center truncate">
           <span className="truncate ml-2 text-sm font-medium text-gray-600 dark:text-gray-100 group-hover:text-gray-800 dark:group-hover:text-white">
-            {users && users.username.length > 12
-              ? `${users.username.slice(0, 12)}...`
-              : users.username}
+            {users && users.username?.length > 12
+              ? `${users.username?.slice(0, 12)}...`
+              : users?.username}
           </span>
           <svg
             className="w-3 h-3 shrink-0 ml-1 fill-current text-gray-400 dark:text-gray-500"
@@ -123,7 +123,7 @@ function DropdownProfile({ align }) {
           <ul>
             <li>
               <Link
-                className="font-medium text-sm text-violet-500 hover:text-violet-600 dark:hover:text-violet-400 flex items-center py-1 px-3"
+                className="font-medium text-sm text-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400 flex items-center py-1 px-3"
                 to="/auth/signin"
                 onClick={handleSignOut}
               >

@@ -64,7 +64,7 @@ const FileUploader = ({ register }) => {
         <div className="relative mt-8">
           <button
             type="button"
-            className="absolute top-0 right-0 p-2 text-gray-500 hover:text-gray-700 bg-violet-500 hover:bg-violet-600 rounded-lg"
+            className="absolute top-0 right-0 p-2 text-gray-500 hover:text-gray-700 bg-cyan-500 hover:bg-cyan-600 rounded-lg"
             onClick={handleRemoveImage}
           >
             <AiOutlineDelete className="h-6 w-6 text-white" />

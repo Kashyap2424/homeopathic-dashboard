@@ -5,7 +5,7 @@ const Loader = (props) => {
   return (
     <div className="">
       <svg
-        className="w-6 h-6 mr-3 -ml-1 dark:text-white text-violet-800 animate-spin"
+        className="w-6 h-6 mr-3 -ml-1 dark:text-white text-cyan-800 animate-spin"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"

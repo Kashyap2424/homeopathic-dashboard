@@ -2,7 +2,7 @@
 import React from "react";
 
 // React Router DOM Imports
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // React Hooks Form Imports
 import { useForm } from "react-hook-form";
@@ -22,16 +22,18 @@ import { useAuth } from "../../context/Users";
 import { useSignIn } from "../../hooks/users/useUsers";
 
 // Component Imports
+import NormalInput from "../../components/ui/Input/NormalInput";
+import PasswordInput from "../../components/ui/Input/PasswordInput";
 import LoadingButton from "../../components/ui/Button/LoadingButton";
 
 // Images Imports
 import SingIn from "../../images/sing-in.jpg";
+import Logo from "../../images/Logo.jpg";
 
 const Signin = (props) => {
   const {} = props;
 
   // Auth Context
-  const { login } = useAuth();
   const navigate = useNavigate();
 
   // Hooks
@@ -79,14 +81,11 @@ const Signin = (props) => {
       <div className="lg:p-8 md:p-8 p-4 w-full h-full flex flex-col justify-center">
         {/* sign in form here */}
         <div className="">
-          <svg
-            className="fill-violet-500"
-            xmlns="http://www.w3.org/2000/svg"
-            width={32}
-            height={32}
-          >
-            <path d="M31.956 14.8C31.372 6.92 25.08.628 17.2.044V5.76a9.04 9.04 0 0 0 9.04 9.04h5.716ZM14.8 26.24v5.716C6.92 31.372.63 25.08.044 17.2H5.76a9.04 9.04 0 0 1 9.04 9.04Zm11.44-9.04h5.716c-.584 7.88-6.876 14.172-14.756 14.756V26.24a9.04 9.04 0 0 1 9.04-9.04ZM.044 14.8C.63 6.92 6.92.628 14.8.044V5.76a9.04 9.04 0 0 1-9.04 9.04H.044Z" />
-          </svg>
+          <img
+            className="w-20 h-20 rounded-full"
+            src={Logo}
+            alt="Manthan-Logo"
+          />
 
           <div className="mt-6 text-left">
             <h2 className="text-xl font-semibold text-gray-700 dark:text-white">
@@ -101,50 +100,22 @@ const Signin = (props) => {
         <div className="mt-8">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-semibold text-gray-800 dark:text-gray-200"
-              >
-                Email
-              </label>
-              <input
+              <NormalInput
+                label="Email"
                 type="email"
-                {...register("email")}
-                className={`mt-2 w-full p-2 border rounded-lg focus:outline-none dark:bg-gray-700/50 placeholder:text-sm dark:placeholder:text-gray-400 ${
-                  errors.email
-                    ? "border-red-500 focus:ring-red-500 dark:border-red-600 dark:focus:ring-red-600"
-                    : "border-gray-300 focus:ring-indigo-500 dark:border-gray-700/60 dark:focus:ring-indigo-500/50"
-                }`}
+                name="email"
+                register={register}
+                errors={errors.email}
                 placeholder="Enter your email"
               />
-              {errors.email && (
-                <p className="mt-2 text-xs text-red-500">
-                  {errors.email.message}
-                </p>
-              )}
             </div>
             <div className="mt-4">
-              <label
-                htmlFor="password"
-                className="block text-sm font-semibold text-gray-800 dark:text-gray-200"
-              >
-                Password
-              </label>
-              <input
-                type="password"
-                {...register("password")}
-                className={`mt-2 w-full p-2 border rounded-lg focus:outline-none dark:bg-gray-700/50 placeholder:text-sm dark:placeholder:text-gray-400  ${
-                  errors.email
-                    ? "border-red-500 focus:ring-red-500 dark:border-red-600 dark:focus:ring-red-600"
-                    : "border-gray-300 focus:ring-indigo-500 dark:border-gray-700/60 dark:focus:ring-indigo-500/50"
-                }`}
+              <PasswordInput
+                name="password"
+                register={register}
+                errors={errors.password}
                 placeholder="Enter your password"
               />
-              {errors.password && (
-                <p className="mt-2 text-xs text-red-500">
-                  {errors.password.message}
-                </p>
-              )}
             </div>
             <div className="mt-6">
               <LoadingButton type="submit" isLoading={isSingInLoading}>
@@ -152,7 +123,11 @@ const Signin = (props) => {
               </LoadingButton>
             </div>
           </form>
-          <div className="flex items-center-safe justify-between mt-4 text-sm text-center text-gray-600 dark:text-gray-400">
+
+          {/* 
+             - CLIENT DOES NOT REQUIRE THIS PART OF CODE 
+          */}
+          {/* <div className="flex items-center-safe justify-between mt-4 text-sm text-center text-gray-600 dark:text-gray-400">
             <p className="mr-4 text-sm text-center text-gray-600 dark:text-gray-400">
               Don&apos;t have an account yet?{" "}
               <Link
@@ -169,7 +144,7 @@ const Signin = (props) => {
             >
               Forgot Password?
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

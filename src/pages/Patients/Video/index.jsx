@@ -101,14 +101,14 @@ const VideoStream = (props) => {
           />
           <div
             className={`absolute top-0.5 left-0.5 w-4 h-4 rounded-full transition ${
-              plainVideo ? "bg-violet-500" : "bg-gray-200 dark:bg-gray-700"
+              plainVideo ? "bg-cyan-500" : "bg-gray-200 dark:bg-gray-700"
             }`}
           />
           <div className="relative w-9 h-5 bg-gray-200 dark:bg-gray-700 rounded-full shadow-inner">
             <div
               className={`absolute top-0.5 left-0.5 w-4 h-4 rounded-full transition ${
                 plainVideo
-                  ? "bg-violet-500 left-[1.5px] animate-switch-on"
+                  ? "bg-cyan-500 left-[1.5px] animate-switch-on"
                   : "bg-white dark:bg-gray-800 left-0 animate-switch-off"
               }`}
             />
