@@ -8,6 +8,9 @@ import ThemeToggle from "../components/ThemeToggle";
 import UserMenu from "../components/DropdownProfile";
 import Notifications from "../components/DropdownNotifications";
 
+// Images Imports
+import Logo from "../images/Logo.jpg";
+
 function Header({ sidebarOpen, setSidebarOpen, variant = "default" }) {
   // States
   const [searchModalOpen, setSearchModalOpen] = useState(false);

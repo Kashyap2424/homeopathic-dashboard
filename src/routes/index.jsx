@@ -15,22 +15,25 @@ import BlankLayout from "../layouts/Blank";
 
 // Pages Import
 import SignIn from "../pages/SignIn";
-import SignUp from "../pages/Signup";
-import ForgotPassword from "../pages/ForgotPassword";
+// import SignUp from "../pages/Signup";
+// import ForgotPassword from "../pages/ForgotPassword";
 import NotFound from "../pages/NotFound";
 import Unauthorized from "../pages/Unauthorized";
 import PatientsList from "../pages/Patients/List";
 import PatientsAdd from "../pages/Patients/Add";
 import PatientsUpdate from "../pages/Patients/Update";
 import PatientDetails from "../pages/Patients/Details";
-import Products from "../pages/Products";
-import ProductsSuccess from "../pages/Products/Success";
-import ProductsCancel from "../pages/Products/Cancel";
+// import Products from "../pages/Products";
+// import ProductsSuccess from "../pages/Products/Success";
+// import ProductsCancel from "../pages/Products/Cancel";
 import DoctorDetails from "../pages/Doctors/Details";
 import DoctorList from "../pages/Doctors/List";
 import DoctorUpdate from "../pages/Doctors/Update";
 import DoctorAdd from "../pages/Doctors/Add";
 import VideoStream from "../pages/Patients/Video";
+import EmployeesAdd from "../pages/Employees/Add";
+import EmployeesList from "../pages/Employees/List";
+import EmployeesUpdate from "../pages/Employees/Update";
 
 // Protected Route Import
 import ProtectedRoute, { AdminProtectedRoute } from "./ProtectedRoute";
@@ -101,6 +104,35 @@ const ProtectedRoutes = [
       },
     ],
   },
+  {
+    path: "/employees",
+    children: [
+      {
+        path: "list",
+        element: (
+          <AdminProtectedRoute>
+            <EmployeesList />
+          </AdminProtectedRoute>
+        ),
+      },
+      {
+        path: "add",
+        element: (
+          <AdminProtectedRoute>
+            <EmployeesAdd />
+          </AdminProtectedRoute>
+        ),
+      },
+      {
+        path: "update/:id",
+        element: (
+          <AdminProtectedRoute>
+            <EmployeesUpdate />
+          </AdminProtectedRoute>
+        ),
+      },
+    ],
+  },
 ];
 
 const AuthRoutes = [
@@ -108,26 +140,26 @@ const AuthRoutes = [
     path: "/auth/signin",
     element: <SignIn />,
   },
-  {
-    path: "/auth/signup",
-    element: <SignUp />,
-  },
-  {
-    path: "/auth/forgot-password",
-    element: <ForgotPassword />,
-  },
-  {
-    path: "/auth/stripe/products",
-    element: <Products />,
-  },
-  {
-    path: "/auth/stripe/products/success",
-    element: <ProductsSuccess />,
-  },
-  {
-    path: "/auth/stripe/products/cancel",
-    element: <ProductsCancel />,
-  },
+  // {
+  //   path: "/auth/signup",
+  //   element: <SignUp />,
+  // },
+  // {
+  //   path: "/auth/forgot-password",
+  //   element: <ForgotPassword />,
+  // },
+  // {
+  //   path: "/auth/stripe/products",
+  //   element: <Products />,
+  // },
+  // {
+  //   path: "/auth/stripe/products/success",
+  //   element: <ProductsSuccess />,
+  // },
+  // {
+  //   path: "/auth/stripe/products/cancel",
+  //   element: <ProductsCancel />,
+  // },
 ];
 
 const ErrorRoutes = [
